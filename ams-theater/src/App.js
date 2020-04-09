@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 
-import Blog from "./containers/Blog/Blog";
+import Blog from "./container/Posts/Blog";
 
 class App extends Component {
   render() {
