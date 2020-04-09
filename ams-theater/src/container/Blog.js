@@ -36,11 +36,11 @@ class Blog extends Component {
           </nav>
         </header>
 
-        {/* <Route path="/" exact component={AllMovies} />
+        {/* <Route path="/" exact component={AllMovies} /> */}
         <Switch>
           <Route path="/add-new-movie" exact component={asycNewmovie} />
-          <Route path="/:mId" exact component={asycFullpost} />
-        </Switch> */}
+          {/* <Route path="/:mId" exact component={asycFullpost} /> */}
+        </Switch>
       </div>
     );
   }
