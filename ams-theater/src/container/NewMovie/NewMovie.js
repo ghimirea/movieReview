@@ -16,6 +16,8 @@ class NewMovie extends Component {
     main_star: "",
     co_star: "",
     description: "",
+    comment: [],
+
     newCreated: false,
   };
 
