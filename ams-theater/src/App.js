@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import { BrowserRouter } from "react-router-dom";
+import Nav from "../src/container/NavBar/nav"
 import "./App.css";
-
-import Blog from "./container/Blog";
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className="App">
-          <Blog />
+          <Nav />
         </div>
       </BrowserRouter>
     );

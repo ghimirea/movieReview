@@ -50,6 +50,7 @@ class NewMovie extends Component {
   render() {
     let redirect = null;
 
+    console.log("from Salamasss")
     if (this.state.newCreated) {
       redirect = <Redirect to="/" />;
     }
