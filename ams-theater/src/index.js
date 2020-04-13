@@ -22,7 +22,7 @@ const RootReducer = combineReducers({
 
 //to optimize the code use a common url,header,content type and intercepto
 //to creacte a common base url instead of calling all the url
-axios.defaults.baseURL = "http://dummy.restapiexample.com/api/v1";
+axios.defaults.baseURL = "http://localhost:4000";
 axios.defaults.headers.common["Authorization"] = "AUTH TOKEN";
 axios.defaults.headers.post["Content-Type"] = "application/json";
 
@@ -47,9 +47,11 @@ axios.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 // composeEnhancers(applyMiddleware())
 const Store = createStore(RootReducer, composeEnhancers())
+
 ReactDOM.render(<Provider store={Store}><App /></Provider>, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
