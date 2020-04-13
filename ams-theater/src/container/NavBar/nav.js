@@ -92,12 +92,10 @@ const mapstateToProps = (state) => {
 };
 
 const mapstateDispatch = (dispatch) => {
-  return {
-    adminfunc: () => {
-      dispatch({ type: "loginig" });
-    },
-  };
-};
-//
+    return {
+        adminfunc: () => { dispatch({ type: "loginig" }) }
+    }
+}
+// 
 
-export default connect(mapstateToProps, mapstateDispatch)(Nav);
+export default connect(mapstateToProps, mapstateDispatch)(Nav)
