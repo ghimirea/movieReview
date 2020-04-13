@@ -47,9 +47,11 @@ axios.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 // composeEnhancers(applyMiddleware())
 const Store = createStore(RootReducer, composeEnhancers())
+
 ReactDOM.render(<Provider store={Store}><App /></Provider>, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change

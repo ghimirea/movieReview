@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-// import axios from "../../axios";
 import { Redirect } from "react-router-dom";
 import "./NewMovie.css";
 
@@ -16,20 +15,20 @@ class NewMovie extends Component {
     main_star: "",
     co_star: "",
     description: "",
-    comment: [],
+    // comment: [],
 
     newCreated: false,
   };
 
   postDatahandler = () => {
     const newMovie = {
-      title: this.state.movie_title,
+      movie_title: this.state.movie_title,
       image: this.state.image,
       year: this.state.year,
-      type: this.state.movie_type,
+      movie_type: this.state.movie_type,
       company: this.state.company,
       director: this.state.director,
-      writer: this.state.script_writer,
+      script_writer: this.state.script_writer,
       main_star: this.state.main_star,
       co_star: this.state.co_star,
       description: this.state.description,
@@ -52,7 +51,7 @@ class NewMovie extends Component {
   render() {
     let redirect = null;
 
-    console.log("from Salamasss")
+    console.log("from Salamasss");
     if (this.state.newCreated) {
       redirect = <Redirect to="/" />;
     }
@@ -85,7 +84,7 @@ class NewMovie extends Component {
           onChange={(event) => this.setState({ year: event.target.value })}
         />
 
-        <label>Type of Show</label>
+        <label>Film Genres</label>
         <select
           type="text"
           value={this.state.movie_type}
@@ -96,10 +95,22 @@ class NewMovie extends Component {
           <option value="Choose Type of Movie"></option>
           <option>Action</option>
           <option>Adventure</option>
+          <option>Animation</option>
+          <option>Biography</option>
           <option>Comedy</option>
+          <option>Crime</option>
           <option>Drama</option>
+          <option>Documentary</option>
           <option>Horror</option>
-          <option>Romantic</option>
+          <option>Family</option>
+          <option>History</option>
+          <option>Medical</option>
+          <option>Musical</option>
+          <option>Romance</option>
+          <option>Sceince Fiction</option>
+          <option>Sport</option>
+          <option>War</option>
+          <option>Western</option>
         </select>
 
         <label>Recording Company</label>
@@ -108,7 +119,20 @@ class NewMovie extends Component {
           onChange={(event) => this.setState({ company: event.target.value })}
         >
           <option value="Choose Recording Company"></option>
+          <option>20th Century Fox</option>
           <option>Columbia Pictures</option>
+          <option>DreamWorks Pictures</option>
+          <option>Loinsgate Films</option>
+          <option>Marvel Studios</option>
+          <option>Metro-Goldwyn-Mayer Studios</option>
+          <option>New Line Cinema</option>
+          <option>Nickelodeon Movies</option>
+          <option>Paramount Pictures</option>
+          <option>Pixar</option>
+          <option>Sony Pictures Classics</option>
+          <option>The Weinsten Company</option>
+          <option>Universal Pictures</option>
+          <option>Warner Bros.</option>
           <option>Walt Disney</option>
         </select>
 

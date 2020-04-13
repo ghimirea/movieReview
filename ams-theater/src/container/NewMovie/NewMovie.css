@@ -1,9 +1,11 @@
 .NewMovie {
-    width: 80%;
+    width: 40%;
     margin: 20px auto;
     border: 1px solid #eee;
     box-shadow: 0 2px 3px #ccc;
     text-align: center;
+    background-color: rgb(166, 173, 173);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .NewMovie label {
@@ -29,14 +31,14 @@
     margin: 5px 0;
     padding: 10px;
     font: inherit;
-    border: 1px solid #fa923f;
+    border: 1px solid black;
     background-color: transparent;
-    color: #fa923f;
+    color: black;
     cursor: pointer;
 }
 
 .NewMovie button:hover,
 .NewMovie button:active {
     color: white;
-    background-color: #fa923f;
+    background-color: #3d86b1;
 }
