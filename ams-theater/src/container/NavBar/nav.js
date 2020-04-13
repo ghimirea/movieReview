@@ -4,20 +4,19 @@ import ImageRab from "../Imag/imgControler"
 import importComponent from "../../HOC/asynchComponent";
 
 import { connect } from "react-redux"
+import Singal from "../movie/singalMoview"
 
 
 const asycNewmovie = importComponent(() => {
     return import("../NewMovie/NewMovie");
 });
 
-if(psw=== t&&name===true){
-    this.props.adminfunc()
-}
+
 
 class Nav extends Component {
 
     render() {
-        this.props.adminfunc()
+        // this.props.adminfunc()
         return (
             <div>
                 <header>
@@ -59,6 +58,8 @@ class Nav extends Component {
 
                         <Route exact path="/" component={ImageRab} />
                         <Route exact path="/add-new-movie" component={asycNewmovie} />
+
+                        <Route exact path="/Ima/" component={Singal} />
 
                     </Switch>
 

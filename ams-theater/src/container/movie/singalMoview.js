@@ -3,7 +3,7 @@ import { withRouter } from "react-router"
 
 
 const Singale = (props) => {
-    console.log(props)
+    // console.log(props)
     console.log("from Singal")
     return (
         <div>
@@ -18,4 +18,4 @@ const Singale = (props) => {
 }
 
 
-export default withRouter(Singale)
+export default Singale

@@ -35,7 +35,7 @@ class NewMovie extends Component {
       description: this.state.description,
     };
 
-    axios.post("/create", newMovie).then((data) => {
+    axios.post("/add-new-movie", newMovie).then((data) => {
       console.log(data);
       // console.log(this.state);
       // this.setState({
