@@ -10,10 +10,6 @@ const asycNewmovie = importComponent(() => {
     return import("../NewMovie/NewMovie");
 });
 
-if(psw=== t&&name===true){
-    this.props.adminfunc()
-}
-
 class Nav extends Component {
 
     render() {
