@@ -1,5 +1,4 @@
 import React from "react"
-
 import { withRouter } from "react-router"
 
 
@@ -7,7 +6,6 @@ const Singale = (props) => {
     console.log(props)
     console.log("from Singal")
     return (
-
         <div>
             <img className="card-img-top" src="https://www.joblo.com/assets/images/joblo/posters/2019/01/IO-poster-1.jpg" />
             <div className="card-body">
@@ -18,8 +16,6 @@ const Singale = (props) => {
     )
 
 }
-
-
 
 
 export default withRouter(Singale)

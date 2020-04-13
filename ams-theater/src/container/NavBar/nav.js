@@ -3,18 +3,21 @@ import { Route, Link, Switch, Redirect } from "react-router-dom"
 import ImageRab from "../Imag/imgControler"
 import importComponent from "../../HOC/asynchComponent";
 
+import { connect } from "react-redux"
 
 
 const asycNewmovie = importComponent(() => {
     return import("../NewMovie/NewMovie");
 });
 
-
-
+if(psw=== t&&name===true){
+    this.props.adminfunc()
+}
 
 class Nav extends Component {
 
     render() {
+        this.props.adminfunc()
         return (
             <div>
                 <header>
@@ -29,9 +32,9 @@ class Nav extends Component {
                                 <li className="nav-item active">
                                     <Link className="nav-link" to="/"><span class="sr-only">(current)</span></Link>
                                 </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/add-new-movie">New-Movies </Link>
-                                </li>
+                                {this.props.adminLoging === true ? <li className="nav-item">
+                                    <Link className="nav-link" to="/add-new-movie"> ADD-New-Movies </Link>
+                                </li> : null}
                                 <li className="nav-item">
                                     <Link className="nav-link" to=" ">TOP-Movies</Link>
                                 </li>
@@ -66,4 +69,19 @@ class Nav extends Component {
     }
 }
 
-export default Nav 
+
+const mapstateToProps = (state) => {
+    return {
+        adminLoging: state.admin.admin
+    }
+
+}
+
+const mapstateDispatch = (dispatch) => {
+    return {
+        adminfunc: () => { dispatch({ type: "loginig" }) }
+    }
+}
+// 
+
+export default connect(mapstateToProps, mapstateDispatch)(Nav)

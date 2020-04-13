@@ -4,6 +4,21 @@ import "./index.css";
 import App from "./App";
 import registerServiceWorker from "./serviceWorker";
 import axios from "axios";
+import { createStore, combineReducers, compose, applyMiddleware } from "redux"
+import { Provider } from "react-redux"
+import Reducer from "../src/Store/reducer"
+import navReducer from "../src/Store/navreducer"
+
+
+/**
+ * fro the creation of the Root reducer and combine both of  the reducers in one 
+ */
+const RootReducer = combineReducers({
+  admin: navReducer,
+  movieReducer: Reducer
+
+})
+
 
 //to optimize the code use a common url,header,content type and intercepto
 //to creacte a common base url instead of calling all the url
@@ -32,9 +47,10 @@ axios.interceptors.response.use(
     return Promise.reject(error);
   }
 );
-
-
-ReactDOM.render(<App />, document.getElementById("root"));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// composeEnhancers(applyMiddleware())
+const Store = createStore(RootReducer, composeEnhancers())
+ReactDOM.render(<Provider store={Store}><App /></Provider>, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
