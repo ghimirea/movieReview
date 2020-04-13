@@ -5,7 +5,8 @@ import importComponent from "../../HOC/asynchComponent";
 import logo from "../../moviejpg.jpg";
 
 import { connect } from "react-redux"
-import Singal from "../movie/singalMoview"
+import Singal from "../movie/singalMoview";
+import Login from "../SignInSignUp/Login";
 
 
 const asycNewmovie = importComponent(() => {
@@ -58,34 +59,18 @@ class Nav extends Component {
                 {
                     <Switch>
 
-                        <Route exact path="/" component={ImageRab} />
-                        <Route exact path="/add-new-movie" component={asycNewmovie} />
+                        <Route exact path="/" component={ImageRab} />;
+                        <Route exact path="/add-new-movie" component={asycNewmovie} />;
 
-                        <Route exact path="/Ima/" component={Singal} />
+                        <Route exact path="/Ima/" component={Singal} />;
+                        <Route exact path="/Login" component={Login} />;
 
                     </Switch>
 
                 }
 
             </div>
-            <div className="collapse navbar-collapse">
-              <Link className="btn btn-outline-success" to="/Singup">
-                Singup
-              </Link>
-
-              <Link className=" btn btn-outline-success" to="/Login">
-                Login
-              </Link>
-            </div>
-          </nav>
-        </header>
-        {
-          <Switch>
-            <Route exact path="/" component={ImageRab} />
-            <Route exact path="/add-new-movie" component={asycNewmovie} />
-          </Switch>
-        }
-      </div>
+            
     );
   }
 }
