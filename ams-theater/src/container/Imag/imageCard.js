@@ -1,7 +1,9 @@
 import React from "react"
+import { Route, Link, Switch, Redirect } from "react-router-dom"
 import Singale from "../movie/singalMoview"
 import { withRouter } from "react-router"
-import { Route, Link, Switch } from "react-router-dom"
+// import ImageRab from "../Imag/imgControler"
+
 
 import "./image.css";
 
@@ -14,7 +16,7 @@ const Image = (props) => {
                 <div className="card-body">
                     <h5 className="card-title">{props.mo}----title</h5>
                     <p className="card-text">{props.mo}Some quick example</p>
-                    <Link to="/Ima/:id" className="btn btn-outline-warning">Details</Link>
+                    <Link className="btn btn-outline-warning" to="/Ima/"  >Details</Link>
                 </div>
             </div>
             <div className="  btn-outline-warning  card  ge" >
@@ -22,7 +24,7 @@ const Image = (props) => {
                 <div className="card-body">
                     <h5 className="card-title">{props.title}title</h5>
                     <p className="card-text">{props.p}Some quick example</p>
-                    <Link to="/Ima/:id" className="btn btn-outline-warning">Details</Link>
+                    <Link className="btn btn-outline-warning" to="/Ima/"  >Details</Link>
                 </div>
 
             </div>
@@ -31,7 +33,7 @@ const Image = (props) => {
                 <div className="card-body">
                     <h5 className="card-title">{props.title}title</h5>
                     <p className="card-text">{props.p}Some quick example</p>
-                    <Link to="/Ima/:id" className="btn btn-outline-warning">Details</Link>
+                    <Link className="btn btn-outline-warning" to="/Ima/"  >Details</Link>
                 </div>
 
             </div>
@@ -40,7 +42,7 @@ const Image = (props) => {
                 <div className="card-body">
                     <h5 className="card-title">{props.title}title</h5>
                     <p className="card-text">{props.p}Some quick example</p>
-                    <Link to="/Ima/:id" className="btn btn-outline-warning">Details</Link>
+                    <Link className="btn btn-outline-warning" to="/Ima/"  >Details</Link>
                 </div>
 
             </div>
@@ -49,14 +51,15 @@ const Image = (props) => {
                 <div className="card-body">
                     <h5 className="card-title">{props.title}title</h5>
                     <p className="card-text">{props.p}Some quick example</p>
-                    <Link to="/Ima/:id" className="btn btn-outline-warning">Details</Link>
+
+                    <Link className="btn btn-outline-warning" to="/Ima/" >Details</Link>
                 </div>
 
             </div>
 
-
-            <Route path="/Ima/:id" component={Singale} />
-
+            {/* <Route exact path="/Ima/" component={Singale} /> */}
+            {/* <Route  path={"/Ima"} component={Singale} />
+           */}
         </div>
 
     )
