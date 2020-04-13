@@ -16,7 +16,7 @@ const asycNewmovie = importComponent(() => {
 class Nav extends Component {
 
     render() {
-        // this.props.adminfunc()
+        this.props.adminfunc()
         return (
             <div>
                 <header>
