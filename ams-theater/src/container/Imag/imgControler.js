@@ -1,10 +1,10 @@
 import React, { Component } from "react"
-import Axios from "axios"
+// import Axios from "axios"
 import Image from "./imageCard"
 import { Router, Route, withRouter } from "react-router"
 import { connect } from "react-redux"
 import { Actions } from "../../Store/actions/action"
-import Singal from "../movie/singalMoview"
+// import Singal from "../movie/singalMoview"
 import "./image.css";
 // import { BrowserRouter } from "react-router-dom"
 

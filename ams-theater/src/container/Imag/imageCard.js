@@ -1,6 +1,6 @@
 import React from "react"
 import { Route, Link, Switch, Redirect } from "react-router-dom"
-import Singale from "../movie/singalMoview"
+// import Singale from "../movie/singalMoview"
 import { withRouter } from "react-router"
 // import ImageRab from "../Imag/imgControler"
 

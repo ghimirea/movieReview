@@ -15,7 +15,7 @@ class NewMovie extends Component {
     main_star: "",
     co_star: "",
     description: "",
-    // comment: [],
+    // comments: [],
 
     newCreated: false,
   };
@@ -35,7 +35,7 @@ class NewMovie extends Component {
     };
 
     axios.post("/add-new-movie", newMovie).then((data) => {
-      // console.log(data);
+      console.log(data);
       // console.log(this.state);
       // this.setState({
       //   newCreated: true,

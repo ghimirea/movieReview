@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Route, Link, Switch, Redirect } from "react-router-dom";
 import ImageRab from "../Imag/imgControler";
 import importComponent from "../../HOC/asynchComponent";
-import logo from "../../moviejpg.jpg";
+
 import Login from "../SignInSignUp/Login"
 
 import { connect } from "react-redux"
@@ -27,7 +27,7 @@ class Nav extends Component {
                     <nav className="   btn btn-warning disabled navbar navbar-expand-lg navbar-dark bg-dark" >
                         <Link class=" text-warning navbar-brand" to="/">
                             {/* {logo} */}
-                            <img src="https://cdn2.iconfinder.com/data/icons/picons-basic-3/57/basic3-055_video_recording_hd-512.png" width="30" height="30" alt="movies.com" />{" "}
+                            <img src="https://cdn2.iconfinder.com/data/icons/picons-basic-3/57/basic3-055_video_recording_hd-512.png" width="40" height="50" alt="movies.com" />{" "}
                              Movies-4YOU</Link>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
