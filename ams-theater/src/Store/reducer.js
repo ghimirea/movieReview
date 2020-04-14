@@ -1,24 +1,16 @@
-
 const intialSate = {
-    movie: " "
-
-}
-
-// state = { movie: "lord of te rings " }
-// setstate={
-//     movie :"ashim Movie "
-// }
-
+  data: [],
+};
 
 const RootReducer = (state = intialSate, action) => {
-    if (action.type === "mov") {
-        return {
-            ...state,
-            movie: "the new movie lord of  the rings from reducer after the function"
-        }
-    }
+  if (action.type === "mov") {
+    return {
+      ...state,
+      data: state.data.concat(action.data),
+    };
+  }
 
-    return state
-}
+  return state;
+};
 
-export default RootReducer
+export default RootReducer;

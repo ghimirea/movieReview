@@ -1,47 +1,51 @@
-import React, { Component } from "react"
-// import Axios from "axios"
-import Image from "./imageCard"
-import { Router, Route, withRouter } from "react-router"
-import { connect } from "react-redux"
-import { Actions } from "../../Store/actions/action"
-// import Singal from "../movie/singalMoview"
-import "./image.css";
-// import { BrowserRouter } from "react-router-dom"
+import React, { Component } from "react";
+import Axios from "axios";
+import Image from "./imageCard";
 
+import { connect } from "react-redux";
+import { GetDatafromServer } from "../../Store/actions/action";
+
+import "./image.css";
 
 class ImageRab extends Component {
+  componentDidMount() {
+    this.props.show();
+  }
 
-    // componentDidMount() {
+  render() {
+    // console.log(this.props.data);
 
-    // }
-
-
-    render() {
-
-        this.props.show()
-        return (
-
-            < div className="thumbnail con">
-
-                <Image mo={this.props.move} />
-
-            </div>
-        )
-    }
+    return (
+      <div className=" con">
+        {this.props.data.map((item) => {
+          return (
+            <Image
+              key={item["_id"]}
+              id={item["_id"]}
+              movieTitle={item["movie_title"]}
+              image={item.image}
+              year={item.year}
+              movieType={item["movie_type"]}
+            />
+          );
+        })}
+      </div>
+    );
+  }
 }
 
 const mapStatetoProps = (state) => {
-    return {
-        move: state.movieReducer.movie
-    }
-
-}
+  // console.log(state.movieReducer.data);
+  return {
+    move: state.movieReducer.movie,
+    data: state.movieReducer.data,
+  };
+};
 
 const mapStateDispatchToProps = (dispatch) => {
-    return {
-        show: () => dispatch(Actions())
-    }
-}
-// export default connect(mapStatetoProps, mapStateDispatchToProps)(withRouter(ImageRab))
-export default connect(mapStatetoProps, mapStateDispatchToProps)(ImageRab)
+  return {
+    show: () => dispatch(GetDatafromServer()),
+  };
+};
 
+export default connect(mapStatetoProps, mapStateDispatchToProps)(ImageRab);
