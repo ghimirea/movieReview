@@ -3,14 +3,15 @@ import { Route, Link, Switch, Redirect } from "react-router-dom";
 import ImageRab from "../Imag/imgControler";
 import importComponent from "../../HOC/asynchComponent";
 import logo from "../../moviejpg.jpg";
+import Login from "../SignInSignUp/Login"
 
 import { connect } from "react-redux"
 import Singal from "../movie/singalMoview";
-import Login from "../SignInSignUp/Login";
+// import Login from "../SignInSignUp/Login";
 
 
 const asycNewmovie = importComponent(() => {
-  return import("../NewMovie/NewMovie");
+    return import("../NewMovie/NewMovie");
 });
 
 
@@ -20,11 +21,14 @@ class Nav extends Component {
         this.props.adminfunc()
         return (
             <div>
+
                 <header>
+
                     <nav className="   btn btn-warning disabled navbar navbar-expand-lg navbar-dark bg-dark" >
                         <Link class=" text-warning navbar-brand" to="/">
-          <img src={logo} width="120" height="70" alt="movies.com" />{" "}
-          Movies-4YOU</Link>
+                            {/* {logo} */}
+                            <img src="https://cdn2.iconfinder.com/data/icons/picons-basic-3/57/basic3-055_video_recording_hd-512.png" width="30" height="30" alt="movies.com" />{" "}
+                             Movies-4YOU</Link>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -47,46 +51,52 @@ class Nav extends Component {
 
                         </div>
                         <div className="collapse navbar-collapse">
-
                             <Link className="btn btn-outline-success" to="/Singup" >Singup</Link>
-
-
                             <Link className=" btn btn-outline-success" to="/Login" >Login</Link>
-
                         </div>
                     </nav>
-                </header>
-                {
-                    <Switch>
 
-                        <Route exact path="/" component={ImageRab} />;
+
+                    {
+                        <Switch>
+
+
+
+                            <Route exact path="/" component={ImageRab} />;
                         <Route exact path="/add-new-movie" component={asycNewmovie} />;
 
                         <Route exact path="/Ima/" component={Singal} />;
                         <Route exact path="/Login" component={Login} />;
+                            <Route exact path="/Ima/" component={Singal} />
 
-                    </Switch>
 
-                }
+                        </Switch>
+
+                    }
+                </header>
 
             </div>
-            
-    );
-  }
+        );
+    }
+
+
+
+
+
 }
 
 const mapstateToProps = (state) => {
-  return {
-    adminLoging: state.admin.admin,
-  };
+    return {
+        adminLoging: state.admin.admin,
+    };
 };
 
 const mapstateDispatch = (dispatch) => {
-  return {
-    adminfunc: () => {
-      dispatch({ type: "loginig" });
-    },
-  };
+    return {
+        adminfunc: () => {
+            dispatch({ type: "loginig" });
+        },
+    };
 };
 
 

@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux'
-
+import { connect } from 'react-redux'
 import Input from './UI/input';
 import { Route, Link, Switch, Redirect } from "react-router-dom"
 import '../SignInSignUp/SignInSignUp.css';
-import * as actions from '../../Store/actions/auth'
+
+// import * as actions from '../../Store/actions/auth'
+
+
 
 
 class Login extends Component {
@@ -57,11 +59,13 @@ class Login extends Component {
 
     }
 
-    isLoggedIn="true";
+
+    isLoggedIn = "true";
 
     formSubmitEventHandler = (event) => {
         event.preventDefault();
         //this.props.onAuth(this.state.LoginForm.username, this.state.LoginForm.password)
+
         const loginData = {};
         let isFormValid = true;
         let isLoggedIn = true;
@@ -77,7 +81,9 @@ class Login extends Component {
                 alert("Login Successful...")
                 return (
                     this.props.history.push('/')
-                    
+
+
+
                 )
             }
 
@@ -129,13 +135,15 @@ class Login extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return{
-        onAuth: (username, password) => dispatch(actions.auth)
-    }
-}
+
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         onAuth: (username, password) => dispatch(actions.auth)
+//     }
+// }
 
 
 
 export default Login;
 //export default connect(null, mapDispatchToProps)(Login);
+
