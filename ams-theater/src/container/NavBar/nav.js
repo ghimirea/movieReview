@@ -1,16 +1,13 @@
 import React, { Component } from "react";
-import { Route, Link, Switch, Redirect } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import ImageRab from "../Imag/imgControler";
 import importComponent from "../../HOC/asynchComponent";
-
-import logo from "../../moviejpg.jpg";
 import Login from "../SignInSignUp/Login";
 import Com from "../movie/contSingal";
 
+import About from "../about/about";
 
 import { connect } from "react-redux";
-import Singal from "../movie/singalMoview";
-// import Login from "../SignInSignUp/Login";
 
 const asycNewmovie = importComponent(() => {
   return import("../NewMovie/NewMovie");
@@ -25,9 +22,9 @@ class Nav extends Component {
           <nav className="   btn btn-warning disabled navbar navbar-expand-lg navbar-dark bg-dark">
             <Link class=" text-warning navbar-brand" to="/">
               <img
-                src="https://cdn2.iconfinder.com/data/icons/picons-basic-3/57/basic3-055_video_recording_hd-512.png"
+                src="https://www.stepchange.org/portals/0/assets/icon/line-04.png"
                 width="40"
-                height="50"
+                height="40"
                 alt="movies.com"
               />{" "}
               Movies-4YOU
@@ -68,7 +65,7 @@ class Nav extends Component {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="">
+                  <Link className="nav-link" to="/about">
                     About
                   </Link>
                 </li>
@@ -87,6 +84,7 @@ class Nav extends Component {
           {
             <Switch>
               <Route exact path="/" component={ImageRab} />;
+              <Route exact path="/about" component={About} />
               <Route exact path="/add-new-movie" component={asycNewmovie} />;
               <Route exact path="/Login" component={Login} />;
               <Route exact path="/Ima/:id" component={Com} />

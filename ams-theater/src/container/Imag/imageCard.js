@@ -1,14 +1,13 @@
 import React from "react";
-import { Route, Link, Switch, Redirect } from "react-router-dom";
-import Singale from "../movie/singalMoview";
+import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
-
 import "./image.css";
 
+// className=" con thumbnail"
 const Image = (props) => {
   return (
-    <div className=" con  thumbnail">
-      <div className="  btn-outline-warning  card  ge">
+    <div >
+      <div className="  btn-outline-warning card ge">
         <img className="card-img-top" src={props.image} alt="Card image cap" />
         <div className="card-body">
           <h5 className="card-title">Title {props.movieTitle}</h5>
