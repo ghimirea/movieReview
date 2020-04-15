@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Axios from "axios";
-import Com from "../coment/com";
+import AddComment from "../coment/AddComment";
 import Singal from "../movie/singalMoview";
 import "./s.css";
+import ShowComment from "../ShowComment/ShowComment";
 
 export default class contSingal extends Component {
   componentDidMount() {
@@ -53,8 +54,11 @@ export default class contSingal extends Component {
             Mdescription={this.state.description}
           ></Singal>
         </div>
+        <div>
+          <ShowComment id={this.props.match.params.id} />
+        </div>
         <div className=" left">
-          <Com />
+          <AddComment />
         </div>
       </div>
     );

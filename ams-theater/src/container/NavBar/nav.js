@@ -4,11 +4,9 @@ import ImageRab from "../Imag/imgControler";
 import importComponent from "../../HOC/asynchComponent";
 import Login from "../SignInSignUp/Login";
 import Com from "../movie/contSingal";
-
 import About from "../about/about";
-
 import { connect } from "react-redux";
-
+import ShowComment from "../ShowComment/ShowComment";
 const asycNewmovie = importComponent(() => {
   return import("../NewMovie/NewMovie");
 });
@@ -20,13 +18,13 @@ class Nav extends Component {
       <div>
         <header>
           <nav className="   btn btn-warning disabled navbar navbar-expand-lg navbar-dark bg-dark">
-            <Link class=" text-warning navbar-brand" to="/">
+            <Link className=" text-warning navbar-brand" to="/">
               <img
                 src="https://www.stepchange.org/portals/0/assets/icon/line-04.png"
                 width="40"
                 height="40"
                 alt="movies.com"
-              />{" "}
+              />
               Movies-4YOU
             </Link>
             <button
@@ -48,7 +46,7 @@ class Nav extends Component {
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
                   <Link className="nav-link" to="/">
-                    <span class="sr-only">(current)</span>
+                    <span className="sr-only">(current)</span>
                   </Link>
                 </li>
                 {this.props.adminLoging === true ? (
@@ -88,6 +86,7 @@ class Nav extends Component {
               <Route exact path="/add-new-movie" component={asycNewmovie} />;
               <Route exact path="/Login" component={Login} />;
               <Route exact path="/Ima/:id" component={Com} />
+              <Route exact path="/comments/:id" component={ShowComment} />
             </Switch>
           }
         </header>

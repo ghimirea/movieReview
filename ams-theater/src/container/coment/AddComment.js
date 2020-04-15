@@ -4,7 +4,7 @@ import "./com.css";
 
 const com = (props) => {
   return (
-    <form className="form-group">
+    <form className="form-group" action="/comments" method="Post">
       <div className=" container form-group">
         <label for="exampleInputEmail1" className="text-warning ">
           Add it
