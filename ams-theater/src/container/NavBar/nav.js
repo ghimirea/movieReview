@@ -1,15 +1,14 @@
 import React, { Component } from "react";
-import { Route, Link, Switch, Redirect } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import ImageRab from "../Imag/imgControler";
 import importComponent from "../../HOC/asynchComponent";
-import logo from "../../moviejpg.jpg";
+
 import Login from "../SignInSignUp/Login";
 import Com from "../movie/contSingal";
 
 import About from "../about/about";
 
 import { connect } from "react-redux";
-import Singal from "../movie/singalMoview";
 
 const asycNewmovie = importComponent(() => {
   return import("../NewMovie/NewMovie");
