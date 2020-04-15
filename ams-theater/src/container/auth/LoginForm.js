@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { login } from '../../Store/actions/auth'; //login action
+import { login } from '../../Store/actions/auth'; 
 import PropTypes from 'prop-types';
 import { Route, Link, Switch, Redirect } from 'react-router-dom';
 import axios from 'axios';
