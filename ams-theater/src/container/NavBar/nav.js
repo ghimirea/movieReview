@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import ImageRab from "../Imag/imgControler";
 import importComponent from "../../HOC/asynchComponent";
-
 import Login from "../SignInSignUp/Login";
 import Com from "../movie/contSingal";
 
