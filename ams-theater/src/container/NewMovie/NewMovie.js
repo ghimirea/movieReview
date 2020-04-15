@@ -36,10 +36,6 @@ class NewMovie extends Component {
 
     axios.post("/add-new-movie", newMovie).then((data) => {
       console.log(data);
-      // console.log(this.state);
-      // this.setState({
-      //   newCreated: true,
-      // });
       this.props.history.replace("/");
     });
   };
