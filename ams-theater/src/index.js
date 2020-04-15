@@ -35,18 +35,18 @@ axios.defaults.headers.post['Content-Type'] = 'application/json';
 //to add a common interceptors
 axios.interceptors.request.use(
   (requests) => {
-    // console.log(requests);
+  
     return requests;
   },
   (error) => {
-    // console.log(error);
+   
     return Promise.reject(error);
   }
 );
 
 axios.interceptors.response.use(
   (response) => {
-    // console.log(response);
+    
     return response;
   },
   (error) => {

@@ -1,9 +1,27 @@
+.Auth {
+  margin: 20px auto;
+  width: 100%;
+  text-align: center;
+  /* box-shadow: 0 2px 3px #ccc;
+  border: 1px solid #eee; */
+  padding: 10px;
+  box-sizing: border-box;
+  /* background-color: aqua; */
+  background-color: #dbdbdb1f;
+}
+
+@media (min-width: 600px) {
+  .Auth {
+    width: 500px;
+  }
+}
+
 .NewMovie {
   width: 40%;
   margin: 20px auto;
   color: rgb(255, 255, 240);
   /* border: 1px solid #eee;
-    box-shadow: 0 2px 3px #ccc; */
+      box-shadow: 0 2px 3px #ccc; */
   /* border: 1px solid rgba(248, 204, 8, 0.89); */
   /* box-shadow: 0 2px 3px rgba(238, 196, 9, 0.952); */
   text-align: center;

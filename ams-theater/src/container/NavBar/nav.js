@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import { Route, Link, Switch, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -10,9 +11,11 @@ import Com from '../movie/contSingal';
 import Register from '../auth/Register';
 import Alert from '../../container/layout/Alert';
 import { logout } from '../../Store/actions/auth';
+import About from "../about/about";
 
 import { connect } from 'react-redux';
 import Singal from '../movie/singalMoview';
+
 
 const asycNewmovie = importComponent(() => {
   return import('../NewMovie/NewMovie');
@@ -74,11 +77,12 @@ class Nav extends Component {
           <nav className='   btn btn-warning disabled navbar navbar-expand-lg navbar-dark bg-dark'>
             <Link class=' text-warning navbar-brand' to='/'>
               <img
-                src='https://cdn2.iconfinder.com/data/icons/picons-basic-3/57/basic3-055_video_recording_hd-512.png'
-                width='40'
-                height='50'
-                alt='movies.com'
-              />{' '}
+
+                src="https://www.stepchange.org/portals/0/assets/icon/line-04.png"
+                width="40"
+                height="40"
+                alt="movies.com"
+              />{" "}
               Movies-4YOU
             </Link>
             <button
@@ -117,8 +121,9 @@ class Nav extends Component {
                     TOP-Movies
                   </Link>
                 </li>
-                <li className='nav-item'>
-                  <Link className='nav-link' to=''>
+
+                <li className="nav-item">
+                  <Link className="nav-link" to="/about">
                     About
                   </Link>
                 </li>
@@ -134,11 +139,12 @@ class Nav extends Component {
 
           {
             <Switch>
-              <Route exact path='/' component={ImageRab} />;
-              <Route exact path='/add-new-movie' component={asycNewmovie} />;
-              <Route exact path='/login' component={Login} />;
-              <Route exact path='/register' component={Register} />;
-              <Route exact path='/Ima/:id' component={Com} />;
+
+              <Route exact path="/" component={ImageRab} />;
+              <Route exact path="/about" component={About} />
+              <Route exact path="/add-new-movie" component={asycNewmovie} />;
+              <Route exact path="/Login" component={Login} />;
+              <Route exact path="/Ima/:id" component={Com} />
             </Switch>
           }
         </header>
