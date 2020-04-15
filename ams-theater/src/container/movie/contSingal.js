@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-
 import Axios from "axios";
 import Com from "../coment/com";
 import Singal from "../movie/singalMoview";
+import "./s.css";
 
 export default class contSingal extends Component {
   componentDidMount() {
@@ -10,25 +10,17 @@ export default class contSingal extends Component {
     console.log(this.props.match.params.id);
     Axios.get(`/Detail/${id}`)
       .then((result) => {
-        // console.log(result);
         const dataFromServer = result.data;
-        // console.log(dataFromServer);
-        // _id: "5e9603e8245c5c0398e31377";
-        // movie_title: "home ";
-
-        // year: 555;
-        // movie_type: "Medical";
-        // company: "Nickelodeon Movies";
-        // director: "wdfdsf";
-        // script_writer: "dfwf";
-        // main_star: "wfewefwe";
-        // co_star: "wewewewewe";
-        // description: "wefwefwfwr";
         this.setState({
           ...this.state,
           img: dataFromServer.image,
           title: dataFromServer["movie_title"],
           type: dataFromServer["movie_type"],
+          year: dataFromServer.year,
+          company: dataFromServer.company,
+          director: dataFromServer.director,
+          scriptWriter: dataFromServer["script_writer"],
+          description: dataFromServer.description,
         });
       })
       .catch((err) => {
@@ -39,17 +31,31 @@ export default class contSingal extends Component {
     img: null,
     title: null,
     type: null,
+    year: null,
+    company: null,
+    director: null,
+    scriptWriter: null,
+    description: null,
   };
 
   render() {
     return (
       <div>
-        <Singal
-          Mimg={this.state.img}
-          Mtitle={this.state.title}
-          Mtype={this.state.type}
-        ></Singal>
-        <Com />
+        <div className="NewMovie">
+          <Singal
+            Mimg={this.state.img}
+            Mtitle={this.state.title}
+            Mtype={this.state.type}
+            Myear={this.state.year}
+            Mcompany={this.state.company}
+            Mdirector={this.state.director}
+            MscriptWriter={this.state.scriptWriter}
+            Mdescription={this.state.description}
+          ></Singal>
+        </div>
+        <div className=" left">
+          <Com />
+        </div>
       </div>
     );
   }

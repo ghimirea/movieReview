@@ -1,44 +1,23 @@
-import React from 'react';
+import React from "react";
+import "./com.css";
 
 const com = (props) => {
-    return (
-        <div >
-            <form  >
-                <div class=" form-row">
-                    <div class=" form-row col-md-4 mb-3">
-                        <label for="validationServer01">Comments</label>
-                        <textarea type="text" class="form-control is-valid" id="validationServer01" placeholder="" required />
-
-                    </div>
-
-
-                </div>
-                <div class="form-row">
-                    <div class="col-md-4 mb-3">
-                        <label for="validationServer03">First Name </label>
-                        <input type="text" class="form-control " id="validationServer03" placeholder="First Name" required />
-
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="validationServer03">Last Name</label>
-                        <input type="text" class="form-control " id="validationServer03" placeholder="Last Name" required />
-
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="validationServer03">Email</label>
-                        <input type="text" class="form-control " id="validationServer03" placeholder="Email" required />
-
-                    </div>
-
-
-                </div>
-                {/* <div class="form-group">
-
-                </div> */}
-                <button class=" btn-outline-warning" type="submit">Submit</button>
-            </form>
-        </div>
-    );
-}
+  return (
+    <form className="form-group">
+      <div className=" container form-group">
+        <label for="exampleInputEmail1" className="text-warning ">
+          Add it
+        </label>
+        <textarea className="form-control container  col-md-4 mb-3 " />
+        <button
+          type="submit"
+          className="form-control  col-md-4 mb-3 btn btn-outline-warning"
+        >
+          Add-Comment
+        </button>
+      </div>
+    </form>
+  );
+};
 
 export default com;
