@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import Axios from "axios";
-import Com from "../coment/com";
+import axios from "axios";
 import Singal from "../movie/singalMoview";
+import CommentForm from "../coment/commentForm";
 import "./s.css";
 
 export default class contSingal extends Component {
   componentDidMount() {
     const id = this.props.match.params.id;
     console.log(this.props.match.params.id);
-    Axios.get(`/Detail/${id}`)
+    axios.get(`/Detail/${id}`)
       .then((result) => {
         const dataFromServer = result.data;
         this.setState({
@@ -36,6 +36,33 @@ export default class contSingal extends Component {
     director: null,
     scriptWriter: null,
     description: null,
+    user: "",
+    userComm: "",
+  };
+
+  //comment handler functions
+  postCommnethandler = (event) => {
+    event.preventDefault();
+    const newComment = {
+      author: this.state.user,
+      userComment: this.state.userComm,
+    };
+    console.log(newComment);
+    const id = this.props.match.params.id;
+    newComment.id = id;
+
+    axios.post("/comments", newComment).then((data) => {
+      console.log(data);
+    });
+  };
+
+  eventHandleruser = (event) => {
+    this.setState({ user: event.target.value });
+    console.log(event.target.value);
+  };
+  eventHandleruserComm = (event) => {
+    this.setState({ userComm: event.target.value });
+    console.log(event.target.value);
   };
 
   render() {
@@ -54,7 +81,11 @@ export default class contSingal extends Component {
           ></Singal>
         </div>
         <div className=" left">
-          <Com />
+          <CommentForm
+            changedAuthor={this.eventHandleruserComm}
+            changedComment={this.eventHandleruser}
+            postHandler={this.postCommnethandler}
+          />
         </div>
       </div>
     );
