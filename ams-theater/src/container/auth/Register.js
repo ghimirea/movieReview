@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { Route, Link, Switch, Redirect } from 'react-router-dom';
-import { setAlert } from '../../Store/actions/alert';
-import { register } from '../../Store/actions/auth';
-import axios from 'axios';
-import PropTypes from 'prop-types';
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import { Link, Redirect } from "react-router-dom";
+import { setAlert } from "../../Store/actions/alert";
+import { register } from "../../Store/actions/auth";
+import axios from "axios";
+import PropTypes from "prop-types";
 
 const Register = (props) => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    password2: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    password2: "",
   });
 
   const { firstName, lastName, email, password, password2 } = formData;
@@ -23,9 +23,8 @@ const Register = (props) => {
   const onSubmit = async (event) => {
     event.preventDefault();
     if (password !== password2) {
-      props.setAlert('Password do not match', 'danger');
+      props.setAlert("Password do not match", "danger");
     } else {
-      console.log(formData);
       props.register({ firstName, lastName, email, password });
       const newUser = {
         firstName,
@@ -36,13 +35,12 @@ const Register = (props) => {
       try {
         const config = {
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
         };
         const body = JSON.stringify(newUser);
 
-        const response = await axios.post('/register', body, config);
-        console.log(response.data);
+        const response = await axios.post("/register", body, config);
       } catch (err) {
         console.error(err.response.data);
       }
@@ -50,69 +48,68 @@ const Register = (props) => {
   };
 
   //Redirect to home page
-  if(props.isAuthenticated){
-    console.log('Register----->', props)
-    return <Redirect to='/' />
+  if (props.isAuthenticated) {
+    return <Redirect to="/" />;
   }
 
   return (
-    <div className='Auth'>
+    <div className="Auth">
       <h1>Sign Up</h1>
       <p>Create Your Account</p>
-      <form class='form' onSubmit={(event) => onSubmit(event)}>
-        <div class='form-group'>
+      <form className="form" onSubmit={(event) => onSubmit(event)}>
+        <div className="form-group">
           <input
-            type='text'
-            placeholder='First Name'
-            name='firstName'
+            type="text"
+            placeholder="First Name"
+            name="firstName"
             value={firstName}
             onChange={(event) => onChange(event)}
-            // required
+            required
           />
         </div>
-        <div class='form-group'>
+        <div className="form-group">
           <input
-            type='text'
-            placeholder='Last Name'
-            name='lastName'
+            type="text"
+            placeholder="Last Name"
+            name="lastName"
             value={lastName}
             onChange={(event) => onChange(event)}
-            //required
+            required
           />
         </div>
-        <div class='form-group'>
+        <div className="form-group">
           <input
-            type='email'
-            placeholder='Email Address'
-            name='email'
+            type="email"
+            placeholder="Email Address"
+            name="email"
             onChange={(event) => onChange(event)}
             value={email}
           />
         </div>
-        <div class='form-group'>
+        <div className="form-group">
           <input
-            type='password'
-            placeholder='Password'
-            name='password'
+            type="password"
+            placeholder="Password"
+            name="password"
             value={password}
             onChange={(event) => onChange(event)}
-            //minLength='6'
+            minLength="6"
           />
         </div>
-        <div class='form-group'>
+        <div className="form-group">
           <input
-            type='password'
-            placeholder='Confirm Password'
-            name='password2'
+            type="password"
+            placeholder="Confirm Password"
+            name="password2"
             value={password2}
             onChange={(event) => onChange(event)}
-            //minLength='6'
+            minLength="6"
           />
         </div>
-        <input type='submit' class='btn btn-primary' value='Register' />
+        <input type="submit" className="btn btn-primary" value="Register" />
       </form>
-      <p class='my-1'>
-        Already have an account? <Link to='/login'>Login</Link>
+      <p className="my-1">
+        Already have an account? <Link to="/login">Login</Link>
       </p>
     </div>
   );

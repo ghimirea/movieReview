@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import registerServiceWorker from "./serviceWorker";
+
 import axios from "axios";
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
@@ -53,14 +53,10 @@ const initialState = {};
 
 const middleware = [thunk];
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-// composeEnhancers(applyMiddleware())
 export const Store = createStore(
   RootReducer,
   initialState,
   composeWithDevTools(applyMiddleware(...middleware))
-  // composeEnhancers(applyMiddleware(thunk))
 );
 
 ReactDOM.render(

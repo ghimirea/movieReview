@@ -4,7 +4,7 @@ import "./image.css";
 export default class Slide extends Component {
   render() {
     return (
-      <div className="">
+      <div>
         <div
           id="carouselExampleControls"
           className=" col-sm-3 pic  carousel slide container"
@@ -39,7 +39,10 @@ export default class Slide extends Component {
             role="button"
             data-slide="prev"
           >
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
             <span className="sr-only">Previous</span>
           </a>
           <a
@@ -48,7 +51,10 @@ export default class Slide extends Component {
             role="button"
             data-slide="next"
           >
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
             <span className="sr-only">Next</span>
           </a>
         </div>

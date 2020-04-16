@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import AddComment from "../coment/AddComment";
+
 import Singal from "../movie/singalMoview";
 import CommentForm from "../coment/commentForm";
 import "./s.css";
@@ -10,7 +10,8 @@ export default class contSingal extends Component {
   componentDidMount() {
     const id = this.props.match.params.id;
     console.log(this.props.match.params.id);
-    axios.get(`/Detail/${id}`)
+    axios
+      .get(`/Detail/${id}`)
       .then((result) => {
         const dataFromServer = result.data;
         this.setState({
@@ -44,7 +45,6 @@ export default class contSingal extends Component {
 
   //comment handler functions
   postCommnethandler = (event) => {
-    event.preventDefault();
     const newComment = {
       author: this.state.user,
       userComment: this.state.userComm,
@@ -86,15 +86,11 @@ export default class contSingal extends Component {
           <ShowComment id={this.props.match.params.id} />
         </div>
         <div className=" left">
-
           <CommentForm
-            changedAuthor={this.eventHandleruserComm}
-            changedComment={this.eventHandleruser}
+            changedAuthor={this.eventHandleruser}
+            changedComment={this.eventHandleruserComm}
             postHandler={this.postCommnethandler}
           />
-
-          {/* <AddComment /> */}
-
         </div>
       </div>
     );

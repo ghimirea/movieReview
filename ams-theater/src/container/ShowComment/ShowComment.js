@@ -7,11 +7,8 @@ export default class ShowComment extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props.id);
-
     Axios.get(`/comments/${this.props.id}`)
       .then((result) => {
-        console.log("from show comments", result.data);
         this.setState({
           ...this.state,
           comment: result.data,
@@ -26,16 +23,13 @@ export default class ShowComment extends Component {
     let result = null;
 
     if (this.state.comment) {
-      console.log(this.state.comment);
-
       result = this.state.comment.map((item) => {
-        console.log(item);
         return (
           <div>
             <p className={"te"}>
               <b>By:</b> {item.author}
               <br />
-              <b>Comment:</b>  {item.userComment}
+              <b>Comment:</b> {item.userComment}
               <br />
             </p>
           </div>
@@ -45,7 +39,7 @@ export default class ShowComment extends Component {
 
     return (
       <div className="show">
-        <p>all comments{result}</p>
+        <p className={"te"}>COMMENTS:{result}</p>
       </div>
     );
   }

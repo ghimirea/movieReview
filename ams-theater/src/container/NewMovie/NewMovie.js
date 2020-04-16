@@ -15,7 +15,6 @@ class NewMovie extends Component {
     main_star: "",
     co_star: "",
     description: "",
-    // comments: [],
 
     newCreated: false,
   };
@@ -38,10 +37,6 @@ class NewMovie extends Component {
       this.props.history.replace("/");
     });
   };
-
-  componentDidMount() {
-    console.log(this.props);
-  }
 
   render() {
     let redirect = null;

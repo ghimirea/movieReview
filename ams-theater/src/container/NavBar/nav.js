@@ -4,16 +4,13 @@ import PropTypes from "prop-types";
 import ImageRab from "../Imag/imgControler";
 import importComponent from "../../HOC/asynchComponent";
 import Login from "../auth/LoginForm";
-import Com from "../movie/contSingal";
+import ControlerSingalMovie from "../movie/contSingal";
 import Register from "../auth/Register";
 import Alert from "../../container/layout/Alert";
 import { logout } from "../../Store/actions/auth";
 import About from "../about/about";
 import { connect } from "react-redux";
 import ShowComment from "../ShowComment/ShowComment";
-
-
-
 
 const asycNewmovie = importComponent(() => {
   return import("../NewMovie/NewMovie");
@@ -119,7 +116,7 @@ class Nav extends Component {
               <Route exact path="/add-new-movie" component={asycNewmovie} />;
               <Route exact path="/Login" component={Login} />;
               <Route exact path="/register" component={Register} />;
-              <Route exact path="/Ima/:id" component={Com} />
+              <Route exact path="/Ima/:id" component={ControlerSingalMovie} />
               <Route exact path="/comments/:id" component={ShowComment} />
             </Switch>
           }
