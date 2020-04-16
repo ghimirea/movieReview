@@ -10,46 +10,46 @@ export default class Slide extends Component {
           className=" col-sm-3 pic  carousel slide container"
           data-ride="carousel"
         >
-          <div class="carousel-inner">
-            <div class="carousel-item active">
+          <div className="carousel-inner">
+            <div className="carousel-item active">
               <img
-                class="d-block w-100"
+                className="d-block w-100"
                 src="https://4.bp.blogspot.com/-01VrN_YGTc8/XCB7inrKpzI/AAAAAAAACls/ogoVYKxunuwegdmSxm381xVGpDq5GnCdgCLcBGAs/s1600/latest-action-movie-poster-background-download.jpg"
                 alt="First slide"
               />
             </div>
-            <div class="carousel-item">
+            <div className="carousel-item">
               <img
-                class="d-block w-100"
+                className="d-block w-100"
                 src="https://www.joblo.com/assets/images/oldsite/posters/images/full/pantherposterhandsmain_thumb.jpg"
                 alt="Second slide"
               />
             </div>
-            <div class="carousel-item">
+            <div className="carousel-item">
               <img
-                class="d-block w-100"
+                className="d-block w-100"
                 src="https://lh3.googleusercontent.com/proxy/KeS-Od6rlAQpF3vcF9RYjQZRWiFuJaDvOXdd8lAAg8PUQSisplm3jCXAcXji_DgN1WepeTNZZlYvRMx0IuqmpDiELLIn6X7yTroDMYQ"
                 alt="Third slide"
               />
             </div>
           </div>
           <a
-            class="carousel-control-prev"
+            className="carousel-control-prev"
             href="#carouselExampleControls"
             role="button"
             data-slide="prev"
           >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="sr-only">Previous</span>
           </a>
           <a
-            class="carousel-control-next"
+            className="carousel-control-next"
             href="#carouselExampleControls"
             role="button"
             data-slide="next"
           >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="sr-only">Next</span>
           </a>
         </div>
       </div>

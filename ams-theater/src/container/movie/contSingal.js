@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
+import AddComment from "../coment/AddComment";
 import Singal from "../movie/singalMoview";
 import CommentForm from "../coment/commentForm";
 import "./s.css";
+import ShowComment from "../ShowComment/ShowComment";
 
 export default class contSingal extends Component {
   componentDidMount() {
@@ -80,12 +82,19 @@ export default class contSingal extends Component {
             Mdescription={this.state.description}
           ></Singal>
         </div>
+        <div>
+          <ShowComment id={this.props.match.params.id} />
+        </div>
         <div className=" left">
+
           <CommentForm
             changedAuthor={this.eventHandleruserComm}
             changedComment={this.eventHandleruser}
             postHandler={this.postCommnethandler}
           />
+
+          {/* <AddComment /> */}
+
         </div>
       </div>
     );

@@ -5,17 +5,23 @@ import App from "./App";
 import registerServiceWorker from "./serviceWorker";
 import axios from "axios";
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 import { Provider } from "react-redux";
-import Reducer from "../src/Store/reducer";
-import navReducer from "../src/Store/navreducer";
+import Reducer from "./Store/reducers/reducer";
+import navReducer from "./Store/reducers/navreducer";
+import alert from "./Store/reducers/alert";
+import auth from "./Store/reducers/auth";
+
 import thunk from "redux-thunk";
 
 /**
- * fro the creation of the Root reducer and combine both of  the reducers in one
+ * for the creation of the Root reducer and combine both of  the reducers in one
  */
 const RootReducer = combineReducers({
   admin: navReducer,
   movieReducer: Reducer,
+  alert,
+  auth,
 });
 
 //to optimize the code use a common url,header,content type and intercepto
@@ -43,11 +49,18 @@ axios.interceptors.response.use(
   }
 );
 
+const initialState = {};
+
+const middleware = [thunk];
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 // composeEnhancers(applyMiddleware())
-const Store = createStore(
+export const Store = createStore(
   RootReducer,
-  composeEnhancers(applyMiddleware(thunk))
+  initialState,
+  composeWithDevTools(applyMiddleware(...middleware))
+  // composeEnhancers(applyMiddleware(thunk))
 );
 
 ReactDOM.render(
@@ -56,8 +69,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-registerServiceWorker();
