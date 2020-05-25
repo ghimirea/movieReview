@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+// This is User schema
 
 const UserSchema = new Schema({
   firstName: {
